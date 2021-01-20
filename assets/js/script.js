@@ -1,4 +1,11 @@
-console.log("sup");
+function startQuiz() {
+  var x = document.getElementById("quizShow");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 
 //GIVEN I am taking a code quiz /press start button /load quiz page
 //WHEN I click the start button
