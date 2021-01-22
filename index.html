@@ -27,13 +27,14 @@
           <div class="timer" id="timeSet">60</div>
         </div>
       </div>
+      </div>
 
       <div class="quiz" id="quizShow">
         <div class="container">
           <div class="row">
             <div col-md-3></div>
             <div col-md-6>
-              <h2 class="question" id="question">hi</h2>
+              <h2 class="question" id="question"></h2>
             </div>
             <div col-md-3></div>
           </div>
@@ -58,7 +59,7 @@
                   class="form-check-input"
                   type="checkbox"
                   value=""
-                  id="defaultCheck2"
+                  id="checkbox"
                 />
                 <label class="form-check-label" for="defaultCheck2">
                   Disabled checkbox
@@ -69,7 +70,7 @@
                   class="form-check-input"
                   type="checkbox"
                   value=""
-                  id="defaultCheck3"
+                  id="checkbox"
                 />
                 <label class="form-check-label" for="defaultCheck3">
                   Disabled checkbox
@@ -80,7 +81,7 @@
                   class="form-check-input"
                   type="checkbox"
                   value=""
-                  id="defaultCheck4"
+                  id="checkbox"
                 />
                 <label class="form-check-label" for="defaultCheck4">
                   Disabled checkbox
@@ -92,23 +93,28 @@
             </div>
           </div>
         </div>
+        <div class="container">
+      <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-2">
+          <button class="nextBtn" id="next">NEXT</button>
+        </div>
+        <div class="col-md-5"></div>
+      </div>
+    </div>
       </div>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-md-5"></div>
         <div class="col-md-2">
-          <button onclick="startQuiz()">START</button>
+          <button class="startBtn" id="start">START</button>
         </div>
         <div class="col-md-5"></div>
       </div>
     </div>
+    
 
     <script src="assets\js\script.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
