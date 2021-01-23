@@ -10,7 +10,7 @@ h1 {
     color: coral;
 }
 
-.question {
+.questionText {
 
     text-align: center;
     margin-bottom: 30px;
@@ -30,13 +30,21 @@ h1 {
 }
 
 .quiz {
-    display: none;
+    display: block;
 }
 
 .hidden {
-    display: none;
+    display: block;
 }
 
 .show {
     display: block;
+}
+
+.correct {
+    background-color: #198754;
+}
+
+.incorrect {
+    background-color: #dc3545;
 }
