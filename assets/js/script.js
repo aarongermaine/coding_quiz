@@ -16,6 +16,7 @@ let availableQuestions = [];
 
 
 
+
 let questions = [
   {
     question: "Who invented JavaScript?",
@@ -46,7 +47,7 @@ let questions = [
   },
 ];
 
-const correctScore = 100;
+
 const maxQuestions = 3;
 
 startGame = () => {
@@ -63,12 +64,24 @@ setScore = () => {
 };
 
 startTimer = () => {
-  var seconds = 30;
+  var seconds = 10;
   setInterval(function() {
-    timer.innerHTML = seconds--
+    timer.innerHTML = seconds--;
+    
+    //selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+    if (selectedAnswer) {
+      seconds += 10;
+      return;
+      //add 10 to timer
+    }
+    else if (seconds = 0)
+      return;
   }, 1000);
+  
 
 }
+
+
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
