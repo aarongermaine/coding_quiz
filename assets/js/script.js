@@ -1,21 +1,12 @@
-//const startButton = document.getElementById("start");
-//const questionContainer = document.getElementById("quizShow");
-const choices = Array.from(
-  document.getElementsByClassName("button-label")
-);
+const choices = Array.from(document.getElementsByClassName("button-label"));
 const question = document.getElementById("question");
 var timer = document.getElementById("timeSet");
-var score = document.getElementById("scoreSet");
-//const answerButtonEl = document.getElementById("answer-buttons");
-//const nextButtonEl = document.getElementById("next");
+var scoreText = document.getElementById("scoreSet");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
 let questionCounter = 0;
 let availableQuestions = [];
-
-
-
 
 let questions = [
   {
@@ -47,52 +38,46 @@ let questions = [
   },
 ];
 
-
+const scorePoints = 100;
 const maxQuestions = 3;
 
 startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
-  
+
   getNewQuestion();
   startTimer();
 };
 
-setScore = () => {
+setScore = () => {};
 
-};
+var seconds = 10;
 
 startTimer = () => {
-  var seconds = 10;
-  setInterval(function() {
+  setInterval(function () {
     timer.innerHTML = seconds--;
-    
+
     //selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
     if (selectedAnswer) {
       seconds += 10;
       return;
       //add 10 to timer
-    }
-    else if (seconds = 0)
-      return;
+    } else if ((seconds = 0)) return;
   }, 1000);
-  
-
-}
-
-
+};
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
-    return window.location.assign("/end.html");
+    localStorage.setItem("mostRecentScore", score);
+    return window.location.assign("/results.html");
   }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
 
-  choices.forEach(choice => {
+  choices.forEach((choice) => {
     const number = choice.dataset["number"];
     choice.innerText = currentQuestion["choice" + number];
   });
@@ -102,30 +87,37 @@ getNewQuestion = () => {
   acceptingAnswers = true;
 };
 
-choices.forEach(choice => {
-  choice.addEventListener("click", e => {
+choices.forEach((choice) => {
+  choice.addEventListener("click", (e) => {
     if (!acceptingAnswers) return;
 
     acceptingAnswers = false;
     const selectedChoice = e.target;
     let selectedAnswer = selectedChoice.dataset["number"];
-    
-    let applyMe = 
+
+    let applyMe =
       selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-    
-     console.log(applyMe);
+
+    if (applyMe === "correct") {
+      changeScore(scorePoints);
+      seconds = seconds + 10;
+    } else {
+      seconds = seconds - 5;
+    }
+
     selectedChoice.parentElement.classList.add(applyMe);
 
-    setTimeout( () => {
+    setTimeout(() => {
       selectedChoice.parentElement.classList.remove(applyMe);
       getNewQuestion();
     }, 1000);
-
-    
-
-    
   });
 });
+
+changeScore = (num) => {
+  score += num;
+  scoreText.innerText = score;
+};
 
 startGame();
 
