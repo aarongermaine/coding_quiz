@@ -47,5 +47,5 @@ const tryAgainBtn = document.getElementById("tryAgain");
 
 tryAgainBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  window.location.assign("/index.html");
+  window.location.assign("/coding_quiz");
 })
