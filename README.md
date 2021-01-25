@@ -26,7 +26,7 @@ INTRODUCTION
 
 A web form application that tests a users knowledge on Javascript with a brief quiz!
 
-Image of site: 
+Image of site: codingquiz.png
 
 
 REQUIREMENTS
