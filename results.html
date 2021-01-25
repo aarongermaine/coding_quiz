@@ -32,67 +32,58 @@
     </div>
 
     <div>
-      
-        <div class="row">
-          <div col-md-3></div>
-          <div col-md-6>
-            <h2 class="result-head">Results</h2>
-          </div>
-          <div col-md-3></div>
+      <div class="row">
+        <div col-md-3></div>
+        <div col-md-6>
+          <h2 class="result-head">Results</h2>
         </div>
-      
-      
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8"></div>
-        </div>
-        <div class="col-md-2"></div>
+        <div col-md-3></div>
       </div>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8"></div>
+      </div>
+      <div class="col-md-2"></div>
     </div>
 
     <div>
-      
-        <div class="row">
-          <div col-md-3></div>
-          <div col-md-6>
-            <h3>Score:</h3>
-            <p id="scoreResults" id="mostRecentScore"></p>
-          </div>
-          <div col-md-3></div>
+      <div class="row">
+        <div col-md-3></div>
+        <div col-md-6>
+          <h3>Score:</h3>
+          <p id="scoreResults" id="mostRecentScore"></p>
         </div>
-      
-      
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8"></div>
-        </div>
+        <div col-md-3></div>
+      </div>
+
+      <div class="row">
         <div class="col-md-2"></div>
-      
+        <div class="col-md-8"></div>
+      </div>
+      <div class="col-md-2"></div>
     </div>
 
-    
+    <form id="scoreForm">
       <div class="row">
-        <label
-          for="colFormLabelSm"
-          class="col-sm-4 col-form-label col-form-label-sm"
-          >Name</label
-        >
+        <div class="col-sm-4"></div>
         <div class="col-sm-4">
           <input
             type="text"
-            class="form-control form-control-sm"
+            class="form-control form-control-sm text-center"
             id="username"
             placeholder="Your Name"
           />
         </div>
         <div class="col-sm-4"></div>
       </div>
-    </div>
-    
+
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-5 start-button-col">
-          <button class="result-buttons btn-primary" id="saveScoreBtn">Submit</button>
+          <button class="result-buttons btn-primary" id="saveScoreBtn">
+            Submit
+          </button>
         </div>
         <div class="col-md-5 start-button-col">
           <button class="result-buttons btn-success" id="">Try Again</button>
@@ -100,20 +91,26 @@
 
         <div class="col-md-1"></div>
       </div>
-
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <div class="table-responsive">
-            <table class="table" id="highScoreList">
-              
-            </table>
-          </div>
+    </form>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="table-responsive">
+          <table class="table" id="highScoreList">
+            <thread>
+              <tr>
+                Name
+              </tr>
+              <tr>
+                Score
+              </tr>
+            </thread>
+            <tbody id="scoreList" class="text-white"></tbody>
+          </table>
         </div>
       </div>
-      <div class="col-md-2"></div>
-
     </div>
+    <div class="col-md-2"></div>
 
     <script src="assets\js\score.js"></script>
   </body>

@@ -1,106 +1,96 @@
 h1 {
-    margin: 30px;
-    padding: 10px;
-    text-align: center;
-    border-style: solid;
-    border-radius: 10px;
-    border-bottom: solid;
-    border-top-left-radius: 5px;
-    border-spacing: 20px;
-    color: #fd7e14;
+  margin: 30px;
+  padding: 10px;
+  text-align: center;
+  border-style: solid;
+  border-radius: 10px;
+  border-bottom: solid;
+  border-top-left-radius: 5px;
+  border-spacing: 20px;
+  color: #fd7e14;
 }
 
 body {
-
-    background-color: rgb(29, 28, 28);
-    color: whitesmoke;
-
+  background-color: rgb(29, 28, 28);
+  color: whitesmoke;
 }
 
 .score {
-    border-style: solid;
-    border-radius: 10px;
-    text-align: center;
+  border-style: solid;
+  border-radius: 10px;
+  text-align: center;
 }
 
 p {
-    text-align: center;
+  text-align: center;
 }
 
 .timer {
-    border-style: solid;
-    border-radius: 10px;
-    text-align: center;
+  border-style: solid;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .questionText {
-
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .column {
-    justify-content: center;
+  justify-content: center;
 }
 
 .button-choices {
-    text-align: center;
-    
+  text-align: center;
 }
 
 .button-label {
-
-    color: black
-
+  color: black;
 }
 
 .result-head {
-
-    text-align: center;
-    margin-bottom: 30px;
-
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 h3 {
-    text-align: center;
-    color: #fd7e14;
+  text-align: center;
+  color: #fd7e14;
 }
 
 .startBtn {
-    text-align: center;
-    margin-top: 5px;
-    padding: 5%
-
+  text-align: center;
+  margin-top: 5px;
+  padding: 5%;
 }
 
 .result-buttons {
-    text-align: center;
-    padding: 4px;
-    margin: 10px;
-
+  text-align: center;
+  padding: 4px;
+  margin: 10px;
 }
 
 .start-button-col {
-    text-align: center;
+  text-align: center;
 }
 
 .quiz {
-    display: block;
-    margin-top: 10px;
+  display: block;
+  margin-top: 10px;
 }
 
 .hidden {
-    display: block;
+  display: block;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .correct {
-    background-color: #198754;
+  background-color: #198754;
 }
 
 .incorrect {
-    background-color: #dc3545;
+  background-color: #dc3545;
 }

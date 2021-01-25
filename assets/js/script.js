@@ -53,20 +53,19 @@ startGame = () => {
 setScore = () => {};
 
 var seconds = 10;
-
 startTimer = () => {
-  setInterval(function () {
-    timer.innerHTML = seconds--;
-
-    //selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-    if (selectedAnswer) {
-      seconds += 10;
-      return;
-      //add 10 to timer
-    } else if ((seconds = 0)) return;
+  var timeout = setInterval(function () {
+    seconds--;
+    timer.innerHTML = seconds;
+    
+    if (seconds === 0) clearInterval(timeout);
   }, 1000);
+  if (selectedAnswer) {
+    seconds += 10;
+    return;
+    //add 10 to timer
+  }
 };
-
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
     localStorage.setItem("mostRecentScore", score);
