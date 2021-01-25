@@ -80,7 +80,7 @@ startTimer = () => {
       
       clearInterval(timeout);
        
-      return window.location.assign("/coding_quiz/results.html");
+      return window.location.assign("/pages/results.html");
 
     }
   }, 1000);
@@ -93,7 +93,7 @@ startTimer = () => {
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
     localStorage.setItem("mostRecentScore", score);
-    return window.location.assign("/coding_quiz/results.html");
+    return window.location.assign("/pages/results.html");
   }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
