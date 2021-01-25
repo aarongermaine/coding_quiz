@@ -36,10 +36,28 @@ let questions = [
 
     answer: 3,
   },
+  {
+    question: "What year was Javascript's first appearance?",
+
+    choice1: "1998",
+    choice2: "1995",
+    choice3: "1990",
+
+    answer: 2,
+  },
+  {
+    question: "Where in your HTML should you link your Javascript file?",
+
+    choice1: "<body>",
+    choice2: "<div>",
+    choice3: "<head>",
+
+    answer: 1,
+  },
 ];
 
 const scorePoints = 100;
-const maxQuestions = 3;
+const maxQuestions = 5;
 
 startGame = () => {
   questionCounter = 0;
@@ -52,13 +70,19 @@ startGame = () => {
 
 setScore = () => {};
 
-var seconds = 10;
+var seconds = 15;
 startTimer = () => {
   var timeout = setInterval(function () {
     seconds--;
     timer.innerHTML = seconds;
     
-    if (seconds === 0) clearInterval(timeout);
+    if (seconds === 0) {
+      
+      clearInterval(timeout);
+       
+      return window.location.assign("/results.html");
+
+    }
   }, 1000);
   if (selectedAnswer) {
     seconds += 10;
@@ -86,6 +110,11 @@ getNewQuestion = () => {
   acceptingAnswers = true;
 };
 
+changeScore = (num) => {
+      score += num;
+      scoreText.innerText = score;
+    };
+
 choices.forEach((choice) => {
   choice.addEventListener("click", (e) => {
     if (!acceptingAnswers) return;
@@ -104,6 +133,8 @@ choices.forEach((choice) => {
       seconds = seconds - 5;
     }
 
+    
+
     selectedChoice.parentElement.classList.add(applyMe);
 
     setTimeout(() => {
@@ -113,10 +144,7 @@ choices.forEach((choice) => {
   });
 });
 
-changeScore = (num) => {
-  score += num;
-  scoreText.innerText = score;
-};
+
 
 startGame();
 

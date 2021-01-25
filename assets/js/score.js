@@ -8,6 +8,7 @@ const form = document.getElementById("scoreForm");
 const scorelist = document.getElementById("scoreList");
 const maxScore = 4;
 
+
 scoreResults.innerText = recentScore;
 
 const scoreboardCheck = JSON.parse(localStorage.getItem("scoreboard"));
@@ -40,4 +41,11 @@ if (scoreboardCheck !== null) {
 
   scorelist.appendChild(nameItem);
   scorelist.appendChild(scoreItem);
-}
+};
+
+const tryAgainBtn = document.getElementById("tryAgain");
+
+tryAgainBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  window.location.assign("/index.html");
+})
